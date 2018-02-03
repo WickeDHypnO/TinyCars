@@ -67,9 +67,11 @@ public class RaceManager : MonoBehaviour
         {
             cp.GetComponent<CarMovement>().canDrive = true;
             cp.GetComponent<CarResetter>().enabled = true;
+            cp.GetComponent<CarWeapons>().enabled = true;
         }
         playersCar.GetComponent<CarMovement>().canDrive = true;
         playersCar.GetComponent<CarResetter>().enabled = true;
+        playersCar.GetComponent<CarWeapons>().enabled = true;
         startedCounting = true;
     }
 
@@ -77,6 +79,7 @@ public class RaceManager : MonoBehaviour
     {
         cp.GetComponent<CarMovement>().canDrive = false;
         cp.GetComponent<CarResetter>().enabled = false;
+        cp.GetComponent<CarWeapons>().enabled = false;
         cp.GetComponent<CarMovement>().Turn(0);
         cp.GetComponent<CarMovement>().Accelerate(0);
         if (cp == playersCar)
